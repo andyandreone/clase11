@@ -1,0 +1,26 @@
+[
+	{
+		"id": 0,
+		"title": "computadora",
+		"price": 120325,
+		"thumbnail": "http://placehold.it/300x300"
+	},
+	{
+		"id": 1,
+		"title": "mouse",
+		"price": 1200,
+		"thumbnail": "http://placehold.it/300x300"
+	},
+	{
+		"id": 2,
+		"title": "monitor",
+		"price": 23500,
+		"thumbnail": "http://placehold.it/300x300"
+	},
+	{
+		"id": 3,
+		"title": "teclado",
+		"price": 2500,
+		"thumbnail": "http://placehold.it/300x300"
+	}
+]

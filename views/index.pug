@@ -1,0 +1,29 @@
+html(lang="es")
+    head
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous")
+    body
+        #container
+            .row.justify-content-center
+                .col-md-8
+                    h1.text-center Lista de productos
+                    table.table.table-striped.table-hover.mt-5.text-center
+                        thead
+                            tr
+                                th id 
+                                th Title
+                                th Price
+                                th Thumbnail
+                        tbody
+                            if items.length != 0
+                                each item of items
+                                    tr(style="vertical-align: middle;")
+                                        th= item.id
+                                        td= item.title
+                                        td= item.price
+                                        td
+                                            img(src=item.thumbnail height="50")
+                            else
+                                tr
+                                    td.text-center No hay productos
+                                
