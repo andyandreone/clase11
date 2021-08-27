@@ -66,6 +66,8 @@ app.post("/guardar", upload.single("myFile"),(req, res, next) => {
              res.redirect('/');
 })
 
+//HANDLEBARS
+
 // app.engine(
 //     "hbs",
 //     handlebars({
@@ -76,11 +78,16 @@ app.post("/guardar", upload.single("myFile"),(req, res, next) => {
 // )
 
 // app.set('view engine', 'hbs');
-app.set('view engine', 'pug');
+
+//PUG
+
+//app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views','./views');
 
 app.use(express.static('public'));
 
+//HANDLEBARS
 // app.get('/productos/vista',(req,res)=>{
 //     fs.promises.readFile('productos.txt').then(data =>{
 //         const products = {
@@ -96,6 +103,23 @@ app.use(express.static('public'));
     
 // })
 
+//PUG
+// app.get('/productos/vista',(req,res)=>{
+//     fs.promises.readFile('productos.txt').then(data =>{
+//         const products = {
+//             items: [{}]
+//         }
+
+//         const json = JSON.parse(data.toString('utf-8'));
+//         products.items = json
+//         res.render('index.pug',products)
+//      }).catch(err=>{
+//         console.log(err)
+//      })
+    
+// })
+
+
 app.get('/productos/vista',(req,res)=>{
     fs.promises.readFile('productos.txt').then(data =>{
         const products = {
@@ -104,7 +128,7 @@ app.get('/productos/vista',(req,res)=>{
 
         const json = JSON.parse(data.toString('utf-8'));
         products.items = json
-        res.render('index.pug',products)
+        res.render('pages/index',products)
      }).catch(err=>{
         console.log(err)
      })
